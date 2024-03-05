@@ -1,124 +1,66 @@
-import SwiftUI
-
-struct AccView: View {
-    @StateObject private var viewModel: AccViewModel = .init()
-    @Environment(\.presentationMode) var closeView
-
-    var body: some View {
-        VStack {
-            ZStack {
-                LinearGradient(gradient: Gradient(colors: [.profile, .profile2]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            closeView.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .padding()
-
-                    VStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 4)
-                            .frame(width: 324, height: 255)
-                            .padding()
-                            .overlay(
-                                ZStack {
-                                    if let dataImage = viewModel.image, let uiImage = UIImage(data: dataImage) {
-                                        Image(uiImage: uiImage)
-                                            .resizable()
-                                            .frame(width: 170, height: 170)
-                                            .foregroundColor(.white)
-                                            .clipShape(Circle())
-                                    } else {
-                                        Image(systemName: "person.circle.fill")
-                                            .resizable()
-                                            .foregroundColor(.black)
-                                            .aspectRatio(contentMode: .fit)
-                                            .foregroundColor(.white)
-                                            .frame(width: 159, height: 162)
-                                            .padding(.top, 20)
-                                    }
-                                }
-                            )
-                            .onTapGesture {
-                                viewModel.checkPermissions()
-                            }
-                    }
-
-                    Spacer()
-
-                    TextField("Username", text: $viewModel.userName)
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                        .padding()
-                        .frame(width: 297, height: 38)
-                        .background(
-                            RoundedRectangle(cornerRadius: 0)
-                                .strokeBorder(Color.black, lineWidth: 2)
-                                .frame(width: 297, height: 38)
-                        )
-                    
-                    HStack{
-                        
-                        Text ("Age:")
-                            .padding(.trailing)
-                            .font(.custom("You2013", size: 20))
-                            .foregroundColor(.white)
-
-                            
-                    }
-                    
-                    TextField("User age", text: .init(get: { String(viewModel.age) }, set: { viewModel.age = Int($0) ?? 18 }))
-                        .foregroundColor(.white)
-                        .font(.system(size: 20))
-                        .padding()
-                        .frame(width: 297, height: 38)
-                        .background(
-                            RoundedRectangle(cornerRadius: 0)
-                                .strokeBorder(Color.black, lineWidth: 2)
-                                .frame(width: 297, height: 38)
-                        )
-
-                    Spacer()
-
-                    HStack {
-                        Spacer()
-                        Image(systemName: "message")
-                            .resizable()
-                            .frame(width: 200, height: 100)
-                            .overlay(
-                                ZStack {
-                                    Text(viewModel.greeting)
-                                        .frame(width: 180, height: 80)
-                                        .font(.custom("You2013", size: 18))
-                                        .foregroundColor(.white)
-                                }
-                            )
-                    }
-
-                    HStack {
-                        Image("helper1")
-                            .resizable()
-                            .frame(width: 120, height: 150)
-                    }
-                }
-            }
-        }
-        .sheet(isPresented: $viewModel.isPicker) {
-            ImagePicker(image: $viewModel.image)
-        }
-    }
-}
-
-#Preview {
-    AccView()
+{
+  "message": "",
+  "error": 0,
+  "data": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "Gifts Coctails",
+        "img": "https://i.ibb.co/JHCQBQs/mainorange.jpg",
+        "price": 30,
+        "created_at": null,
+        "goods": [
+          {
+            "id": 101,
+            "name": "Refreshing strawberries",
+            "img": "https://i.ibb.co/cyTZkyJ/straw.jpg",
+            "price": 300,
+            "mass": "200g"
+          },
+          {
+            "id": 102,
+            "name": "Strawberry sangria",
+            "img": "https://i.ibb.co/rxfdHYB/sangria.jpg",
+            "price": 300,
+            "mass": "250g"
+          },
+          {
+            "id": 103,
+            "name": "Smash",
+            "img": "https://i.ibb.co/MZ0Yjxd/smash.jpg",
+            "price": 500,
+            "mass": "250g"
+          },
+          {
+            "id": 104,
+            "name": "Negroni",
+            "img": "https://i.ibb.co/sF74vP0/negroni.jpg",
+            "price": 500,
+            "mass": "250g"
+          },
+          {
+            "id": 105,
+            "name": "Neon Club",
+            "img": "https://i.ibb.co/5861c4G/neonclubb.jpg",
+            "price": 800,
+            "mass": "250g"
+          },
+          {
+            "id": 106,
+            "name": "Neon brazil",
+            "img": "https://i.ibb.co/phxxGNM/nronbrazil.jpg",
+            "price": 900,
+            "mass": "250g"
+          },
+          {
+            "id": 107,
+            "name": "Almost James Bond",
+            "img": "https://i.ibb.co/Rbn7wV6/jamesbo.jpg",
+            "price": 900,
+            "mass": "250g"
+          }
+        ]
+      }
+    ]
+  }
 }
