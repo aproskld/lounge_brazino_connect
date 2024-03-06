@@ -44,7 +44,21 @@
             "img": "https://i.ibb.co/kJKxf90/oldbro.jpg",
             "price": 400,
             "mass": "250g"
-          }
+          },
+          {
+            "id": 16,
+            "name": "BrazColins",
+            "img": "https://i.ibb.co/nmHyyZp/braz-Colinz.jpg",
+            "price": 350,
+            "mass": "250g"
+          },
+          {
+            "id": 17,
+            "name": "Majito",
+            "img": "https://i.ibb.co/qxXBWWH/brazsunlight.jpg",
+            "price": 350,
+            "mass": "250g"
+          },
         ]
       }
     ]
