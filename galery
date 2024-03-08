@@ -1,0 +1,47 @@
+{
+  "message": "",
+  "error": 0,
+  "data": {
+    "categories": [
+      {
+        "id": 1,
+        "name": "1st march - spring party",
+        "img": "https://i.ibb.co/JHCQBQs.jpg",
+        "price": 30,
+        "created_at": null,
+        "goods": [
+          {
+            "id": 10,
+            "name": "Our friends rest",
+            "img": "https://i.ibb.co/8dDGbbD/braz1.jpg"
+          },
+          {
+            "id": 12,
+            "name": "Go go",
+            "img": "https://i.ibb.co/8PLZrsS/braz2.jpg"
+          },
+          {
+            "id": 13,
+            "name": "its hot",
+            "img": "https://i.ibb.co/bLLXyfc/braz3.jpg"
+          },
+          {
+            "id": 14,
+            "name": "Our loyal client",
+            "img": "https://i.ibb.co/S0FTY0w/braz4.jpg"
+          },
+          {
+            "id": 15,
+            "name": "welcome spring",
+            "img": "https://i.ibb.co/B4BVcwb/braz5.jpg"
+          },
+          {
+            "id": 16,
+            "name": "we love u dears",
+            "img": "https://i.ibb.co/kg3896v/braz6.jpg"
+          },
+        ]
+      }
+    ]
+  }
+}
